@@ -46,7 +46,8 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "test": "bin/phpunit"
     },
     "conflict": {
         "symfony/symfony": "*"
@@ -56,5 +57,8 @@
             "allow-contrib": false,
             "require": "4.2.*"
         }
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "4.2.*"
     }
 }

@@ -11,7 +11,7 @@ class JsonFileHandler
         return $content;
     }
 
-    public function writeJsonFile(string $filename, $data, bool $prettyPrint)
+    public function writeJsonFile(string $filename, $data, bool $prettyPrint = false)
     {
         $json = json_encode($data, $prettyPrint ? JSON_PRETTY_PRINT : 0);
 

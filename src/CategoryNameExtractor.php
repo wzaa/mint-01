@@ -1,6 +1,8 @@
 <?php
 namespace App;
 
+use function is_array;
+
 class CategoryNameExtractor
 {
     public function extractNames(array $entries, $language = 'pl_PL'): array
@@ -8,7 +10,7 @@ class CategoryNameExtractor
         $names = [];
 
         foreach ($entries as $entry) {
-            if (!isset($entry['category_id'], $entry['translations'])) {
+            if (!is_array($entry) || !isset($entry['category_id'], $entry['translations'])) {
                 continue;
             }
 
@@ -17,6 +19,10 @@ class CategoryNameExtractor
             }
 
             $translationObject = $entry['translations'][$language];
+
+            if (!isset($translationObject['name'])) {
+                continue;
+            }
 
             $names[$entry['category_id']] = $translationObject['name'];
         }

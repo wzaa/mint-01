@@ -1,6 +1,6 @@
 # What is this?
 
-
+This command-line tool fills in category names into a tree structure and outputs the modified tree.
 
 # Installation
 
@@ -41,4 +41,4 @@ This can also be accessed with `--help` flag.
 
 # Running tests
 
-Simply run `composer test` (TODO)
+Simply run `composer test`.
